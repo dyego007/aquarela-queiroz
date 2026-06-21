@@ -42,8 +42,8 @@ def sync():
         items = []
         max_id = None
         
-        # Pagina até 3 vezes para recuperar cerca de 36 posts
-        for page in range(3):
+        # Pagina até 8 vezes para recuperar cerca de 96 posts
+        for page in range(8):
             query_url = url
             if max_id:
                 query_url += f"?max_id={max_id}"
