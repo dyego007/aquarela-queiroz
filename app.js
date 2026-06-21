@@ -485,7 +485,7 @@ function checkout() {
         return;
     }
 
-    const phoneNumber = "5514998680165";
+    const phoneNumber = "5514997521338";
     
     // Header format
     let messageText = `✨ *NOVO PEDIDO - AQUARELA QUEIROZ* ✨\n\n`;
@@ -623,7 +623,7 @@ function openVideoModal(reel) {
     if (instagramLink) instagramLink.href = reel.instagram_url;
     
     // Formulate WhatsApp redirect message
-    const phoneNumber = "5514998680165";
+    const phoneNumber = "5514997521338";
     const waText = `Olá! Vi o vídeo do provador no site e gostaria de saber a disponibilidade das peças que aparecem nele:\n\n🎥 *Link do Reels:* ${reel.instagram_url}\n\n📝 *Detalhes:* \n${reel.caption.substring(0, 160)}...\n\nObrigada! ❤️`;
     
     if (whatsappBtn) {
