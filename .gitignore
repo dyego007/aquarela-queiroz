@@ -1,0 +1,4 @@
+cookies.json
+*.pyc
+__pycache__/
+.agents/

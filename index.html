@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aquarela Queiroz - Moda Feminina & Novidades</title>
+    
+    <!-- Meta tags SEO -->
+    <meta name="description" content="Descubra as últimas tendências da moda feminina na Aquarela Queiroz. Escolha seus looks favoritos do nosso feed do Instagram, adicione ao pedido e retire na loja via WhatsApp!">
+    <meta name="keywords" content="moda feminina, aquarela queiroz, roupas femininas, instagram shop, looks do dia">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: '#FCFAF6',
+                        blush: '#FFEAE8',
+                        peach: '#FFECD6',
+                        lavender: '#EAE6FF',
+                        mint: '#E2F5EE',
+                        brandDark: '#2C2623',
+                        brandGold: '#D4AF37'
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-cream bg-aquarela-mesh min-h-screen flex flex-col antialiased">
+
+    <!-- Blur Orbs for background aesthetics -->
+    <div class="aquarela-orb bg-blush top-1/4 left-1/3"></div>
+    <div class="aquarela-orb bg-lavender top-2/3 right-1/4"></div>
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-40 w-full glass shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center space-x-2 sm:space-x-3 group shrink">
+                <div class="w-9 h-9 sm:w-12 sm:h-12 rounded-full overflow-hidden border-2 border-rose-100 shadow-md group-hover:scale-105 transition-transform duration-300 flex items-center justify-center shrink-0">
+                    <img id="nav-brand-logo" src="data/media/logo.jpg" alt="Logo Aquarela Queiroz" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="w-full h-full bg-gradient-to-tr from-blush via-peach to-mint flex items-center justify-center" style="display: none;">
+                        <span class="font-serif font-bold text-sm sm:text-base text-brandDark">AQ</span>
+                    </div>
+                </div>
+                <span class="font-serif text-lg sm:text-2xl font-bold tracking-tight text-brandDark truncate">Aquarela <span class="text-rose-500 font-light italic hidden sm:inline">Queiroz</span></span>
+            </a>
+
+            <!-- Desk Nav & Actions -->
+            <nav class="hidden md:flex space-x-8 text-sm font-semibold text-brandDark/85">
+                <a href="#novidades" class="hover:text-rose-600 transition-colors duration-200">Novidades</a>
+                <a href="#como-funciona" class="hover:text-rose-600 transition-colors duration-200">Como Funciona</a>
+                <a href="#contato" class="hover:text-rose-600 transition-colors duration-200">Fale Conosco</a>
+            </nav>
+
+            <div class="flex items-center space-x-2 sm:space-x-4">
+                <!-- Instagram Shortcut -->
+                <a href="https://www.instagram.com/aquarelaqueiroz/" target="_blank" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-brandDark hover:bg-rose-50 hover:text-rose-600 transition-all duration-200" title="Siga nosso Instagram">
+                    <i class="fab fa-instagram text-lg"></i>
+                </a>
+
+                <!-- Cart Button -->
+                <button id="cart-trigger" class="relative w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl glass-dark flex items-center justify-center text-brandDark hover:bg-slate-900 hover:text-white transition-all duration-300 shadow-sm" aria-label="Abrir carrinho de pedidos">
+                    <i class="fas fa-shopping-bag text-base sm:text-lg"></i>
+                    <span id="cart-badge" class="absolute -top-1 -right-1 bg-rose-600 text-white text-[9px] sm:text-[10px] font-bold w-4 h-4 sm:w-5 sm:h-5 rounded-full flex items-center justify-center shadow hidden">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow z-10">
+        
+        <!-- Hero Banner Section -->
+        <section class="relative max-w-7xl mx-auto my-4 sm:my-6 px-4 sm:px-6 lg:px-8">
+            <div class="relative rounded-[1.5rem] sm:rounded-[2.5rem] overflow-hidden bg-brandDark text-white min-h-[240px] sm:min-h-[380px] md:min-h-[450px] flex items-center shadow-2xl">
+                <!-- Hero Image Background -->
+                <div class="absolute inset-0 z-0">
+                    <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1600&auto=format&fit=crop&q=80" alt="Coleção Aquarela" class="w-full h-full object-cover opacity-35 object-center">
+                    <div class="absolute inset-0 bg-gradient-to-r from-brandDark via-brandDark/85 to-transparent"></div>
+                </div>
+
+                <!-- Hero Content -->
+                <div class="relative z-10 max-w-2xl p-6 sm:p-12 md:p-16 space-y-4 sm:space-y-6">
+                    <span class="inline-flex items-center px-3 py-1 sm:px-4 sm:py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[9px] sm:text-xs font-semibold tracking-widest text-peach uppercase">
+                        ✨ Tendências da Temporada
+                    </span>
+                    <h1 class="text-2xl sm:text-4xl md:text-6xl font-bold font-serif leading-[1.2] sm:leading-[1.1] tracking-tight">
+                        Colorindo o seu estilo com leveza.
+                    </h1>
+                    <p class="text-slate-300 text-[11px] sm:text-sm md:text-base leading-relaxed font-light max-w-lg">
+                        Conectamos nosso feed do Instagram diretamente com você. Escolha suas peças favoritas, selecione tamanho e cor e finalize para retirada em nossa loja física via WhatsApp.
+                    </p>
+                    <div class="pt-2 sm:pt-4">
+                        <a href="#novidades" class="px-5 py-3 sm:px-8 sm:py-4 bg-rose-500 hover:bg-rose-600 text-white rounded-xl sm:rounded-2xl text-xs sm:text-sm font-semibold tracking-wide shadow-lg shadow-rose-500/20 transition-all duration-300 inline-block">
+                            Ver Novidades <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Como Funciona Section -->
+        <section id="como-funciona" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+                <!-- Passo 1 -->
+                <div class="glass p-4 sm:p-6 rounded-2xl sm:rounded-3xl flex items-start gap-3 sm:gap-4 border border-slate-100 shadow-sm">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-blush flex items-center justify-center text-rose-500 shrink-0 font-bold text-base sm:text-lg">
+                        1
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-800 text-sm sm:text-base mb-0.5 sm:mb-1">Escolha no Feed</h4>
+                        <p class="text-[11px] sm:text-xs text-slate-500 leading-relaxed">Navegue pelas fotos reais do nosso Instagram diretamente aqui no catálogo da loja.</p>
+                    </div>
+                </div>
+                <!-- Passo 2 -->
+                <div class="glass p-4 sm:p-6 rounded-2xl sm:rounded-3xl flex items-start gap-3 sm:gap-4 border border-slate-100 shadow-sm">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-lavender flex items-center justify-center text-purple-500 shrink-0 font-bold text-base sm:text-lg">
+                        2
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-800 text-sm sm:text-base mb-0.5 sm:mb-1">Selecione suas Opções</h4>
+                        <p class="text-[11px] sm:text-xs text-slate-500 leading-relaxed">Escolha seu tamanho (P ao GG) e a cor/estampa desejada descritas na legenda da foto.</p>
+                    </div>
+                </div>
+                <!-- Passo 3 -->
+                <div class="glass p-4 sm:p-6 rounded-2xl sm:rounded-3xl flex items-start gap-3 sm:gap-4 border border-slate-100 shadow-sm">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-mint flex items-center justify-center text-emerald-500 shrink-0 font-bold text-base sm:text-lg">
+                        3
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-800 text-sm sm:text-base mb-0.5 sm:mb-1">Retirada na Loja</h4>
+                        <p class="text-[11px] sm:text-xs text-slate-500 leading-relaxed">Finalize seu pedido e envie no nosso WhatsApp. Suas peças ficarão reservadas para retirada.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Provador Virtual / Reels Section -->
+        <section id="provador" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 scroll-mt-24 hidden">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+                <div>
+                    <span class="text-xs font-bold text-rose-500 uppercase tracking-widest block mb-2">🎥 Provador Virtual</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-brandDark font-serif">Nossos Reels no Instagram</h2>
+                </div>
+                <p class="text-slate-500 text-sm max-w-md">Assista aos provadores em vídeo e tire suas dúvidas sobre as peças mostradas diretamente no WhatsApp.</p>
+            </div>
+            
+            <!-- Horizontal Scrollable Reels Carousel -->
+            <div id="reels-carousel" class="flex gap-6 overflow-x-auto pb-6 scrollbar-thin snap-x snap-mandatory">
+                <!-- Dynamic Reels Cards via app.js -->
+            </div>
+        </section>
+
+        <!-- Product Feed (Vitrine Interativa) -->
+        <section id="novidades" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 scroll-mt-24">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+                <div>
+                    <span class="text-xs font-bold text-rose-500 uppercase tracking-widest block mb-2">🌸 Catálogo Atualizado</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-brandDark font-serif">Últimas Novidades do Instagram</h2>
+                </div>
+                <div class="flex items-center gap-2 text-xs text-slate-500 font-medium bg-white px-4 py-2.5 rounded-full border border-slate-200 shadow-sm self-start md:self-auto">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    Instagram @aquarelaqueiroz
+                </div>
+            </div>
+
+            <!-- Busca e Filtros de Tamanho -->
+            <div class="mb-8 flex flex-col sm:flex-row gap-4 items-center justify-between bg-white/40 p-4 rounded-3xl border border-slate-100 backdrop-blur-md">
+                <!-- Barra de Busca -->
+                <div class="relative w-full sm:max-w-xs">
+                    <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-400 pointer-events-none">
+                        <i class="fas fa-search text-xs"></i>
+                    </span>
+                    <input type="text" id="search-input" placeholder="Buscar looks..." class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-rose-500 focus:ring-1 focus:ring-rose-500 text-xs sm:text-sm bg-white font-medium text-slate-700 shadow-sm">
+                </div>
+                
+                <!-- Filtros de Tamanho -->
+                <div class="flex gap-2 overflow-x-auto w-full sm:w-auto pb-1 sm:pb-0 scrollbar-none snap-x snap-mandatory">
+                    <button class="filter-btn active px-4 py-2 rounded-full text-xs font-bold bg-slate-900 text-white shadow-sm border border-slate-900 transition-all shrink-0 snap-start" data-size="ALL">Todos</button>
+                    <button class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white text-slate-700 hover:bg-slate-50 border border-slate-200 transition-all shrink-0 snap-start" data-size="P">P</button>
+                    <button class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white text-slate-700 hover:bg-slate-50 border border-slate-200 transition-all shrink-0 snap-start" data-size="M">M</button>
+                    <button class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white text-slate-700 hover:bg-slate-50 border border-slate-200 transition-all shrink-0 snap-start" data-size="G">G</button>
+                    <button class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white text-slate-700 hover:bg-slate-50 border border-slate-200 transition-all shrink-0 snap-start" data-size="GG">GG</button>
+                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div id="product-feed" class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 lg:gap-8">
+                <!-- Populated dynamically via app.js -->
+            </div>
+
+            <!-- Painel de Paginação -->
+            <div id="pagination" class="mt-12 flex justify-center items-center gap-2 flex-wrap">
+                <!-- Populado dinamicamente via app.js -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Cart Sliding Drawer (Carrinho Flutuante) -->
+    <div id="cart-overlay" class="fixed inset-0 bg-brandDark/40 backdrop-blur-sm z-50 hidden transition-opacity"></div>
+    <div id="cart-drawer" class="fixed top-0 right-0 h-full w-full sm:w-[450px] bg-cream shadow-2xl z-50 translate-x-full transition-transform duration-300 ease-in-out flex flex-col border-l border-slate-200">
+        <!-- Drawer Header -->
+        <div class="p-6 border-b border-slate-100 flex items-center justify-between bg-white">
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-full overflow-hidden border border-rose-100 shadow-sm">
+                    <img src="data/media/logo.jpg" alt="Logo" class="w-full h-full object-cover" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png';">
+                </div>
+                <h3 class="text-lg font-bold text-slate-800">Seu Pedido</h3>
+            </div>
+            <button id="cart-close" class="w-8 h-8 rounded-full hover:bg-slate-100 flex items-center justify-center text-slate-500 hover:text-slate-800 transition" aria-label="Fechar carrinho">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <!-- Drawer Content (Scrollable items) -->
+        <div class="flex-grow overflow-y-auto p-6 space-y-6">
+            <!-- Lista de Itens -->
+            <div id="cart-items" class="space-y-4">
+                <!-- Populado dinamicamente via app.js -->
+            </div>
+
+            <!-- Formulário de Informações do Cliente -->
+            <div id="cart-form-section" class="pt-6 border-t border-slate-200 hidden">
+                <h4 class="text-sm font-bold text-slate-800 uppercase tracking-wider mb-4 flex items-center gap-2">
+                    <i class="fas fa-user-circle text-rose-500"></i> Seus Dados para Retirada
+                </h4>
+                <div class="space-y-4">
+                    <div>
+                        <label for="client-name" class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1.5">Seu Nome completo *</label>
+                        <input type="text" id="client-name" placeholder="Ex: Maria Oliveira Silva" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-rose-500 focus:ring-1 focus:ring-rose-500 text-sm bg-white font-medium text-slate-700">
+                    </div>
+                    <div>
+                        <label for="client-phone" class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1.5">WhatsApp / Telefone *</label>
+                        <input type="tel" id="client-phone" placeholder="Ex: (14) 99868-0165" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-rose-500 focus:ring-1 focus:ring-rose-500 text-sm bg-white font-medium text-slate-700">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Drawer Footer -->
+        <div class="p-6 border-t border-slate-100 bg-white space-y-4">
+            <div class="flex justify-between items-center text-sm">
+                <span class="font-medium text-slate-500">Valor Estimado</span>
+                <span id="cart-subtotal" class="text-xl font-bold text-slate-800">R$ 0,00</span>
+            </div>
+            
+            <p class="text-[11px] text-slate-400 leading-normal flex items-start gap-2">
+                <i class="fas fa-info-circle mt-0.5 text-rose-500"></i>
+                As peças serão reservadas para retirada em nossa loja física (Av. Joaquim Ferreira Gandra, 43 - Queiroz). A disponibilidade final e horário de retirada serão combinados no WhatsApp.
+            </p>
+
+            <button id="checkout-btn" class="w-full py-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-2xl text-sm font-bold tracking-wide transition shadow-lg shadow-emerald-600/10 flex items-center justify-center gap-3">
+                <i class="fab fa-whatsapp text-lg"></i> Enviar Pedido no WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <!-- Page Footer -->
+    <footer id="contato" class="bg-white border-t border-slate-100 pt-16 pb-8 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                
+                <!-- Col 1: About -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full overflow-hidden border border-rose-100 shadow-sm flex items-center justify-center">
+                            <img src="data/media/logo.jpg" alt="Logo" class="w-full h-full object-cover" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png';">
+                        </div>
+                        <span class="font-serif text-2xl font-bold tracking-tight text-brandDark">Aquarela <span class="text-rose-500 font-light italic">Queiroz</span></span>
+                    </div>
+                    <p class="text-xs text-slate-500 leading-relaxed font-light">
+                        Trazendo as maiores novidades e tendências de moda de forma rápida, visual e direta para o seu guarda-roupa. A moda que você curte no Instagram pronta para vestir.
+                    </p>
+                    <div class="flex space-x-3 pt-2">
+                        <a href="https://www.instagram.com/aquarelaqueiroz/" target="_blank" class="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-500 hover:bg-rose-50 hover:text-rose-600 transition" aria-label="Link para Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Info de Retirada -->
+                <div class="space-y-4">
+                    <h4 class="text-sm font-bold uppercase tracking-wider text-slate-700">Retirada na Loja 🏢</h4>
+                    <div class="space-y-3 text-xs text-slate-500">
+                        <p class="flex items-start gap-2">
+                            <i class="fas fa-map-marker-alt mt-0.5 text-rose-500"></i>
+                            <span>Av. Joaquim Ferreira Gandra, 43<br>Queiroz - SP</span>
+                        </p>
+                        <p class="flex items-center gap-2">
+                            <i class="fas fa-clock text-rose-500"></i>
+                            <span>Segunda a Sexta: 09h às 18h | Sábado: 09h às 13h</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Col 3: Suporte -->
+                <div class="space-y-4">
+                    <h4 class="text-sm font-bold uppercase tracking-wider text-slate-700">Atendimento e Reservas</h4>
+                    <div class="space-y-3 text-xs text-slate-500">
+                        <p class="flex items-center gap-2">
+                            <i class="fab fa-whatsapp text-rose-500 text-sm"></i>
+                            <span>Contato: (14) 99868-0165</span>
+                        </p>
+                        <p class="flex items-center gap-2">
+                            <i class="fas fa-envelope text-rose-500"></i>
+                            <span>contato@aquarelaqueiroz.com.br</span>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Payment and Security Row -->
+            <div class="border-t border-slate-100 pt-8 flex flex-col md:flex-row items-center justify-between gap-6">
+                <!-- Payment methods -->
+                <div class="flex flex-col items-center md:items-start gap-2">
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Formas de Pagamento (Na Retirada)</span>
+                    <div class="flex flex-wrap gap-2 text-slate-500">
+                        <span class="px-2.5 py-1 rounded-xl bg-slate-50 border border-slate-100 text-[10px] font-bold text-emerald-600 flex items-center gap-1 shadow-sm"><i class="fas fa-qrcode"></i> Pix</span>
+                        <span class="px-2.5 py-1 rounded-xl bg-slate-50 border border-slate-100 text-[10px] font-bold text-slate-600 flex items-center gap-1 shadow-sm"><i class="far fa-credit-card"></i> Crédito</span>
+                        <span class="px-2.5 py-1 rounded-xl bg-slate-50 border border-slate-100 text-[10px] font-bold text-slate-600 flex items-center gap-1 shadow-sm"><i class="fas fa-credit-card"></i> Débito</span>
+                    </div>
+                </div>
+                
+                <!-- Security badge -->
+                <div class="flex items-center gap-3 bg-slate-50 border border-slate-100 px-4 py-2.5 rounded-2xl shadow-sm">
+                    <i class="fas fa-shield-alt text-rose-500 text-lg"></i>
+                    <div class="text-left">
+                        <h5 class="text-xs font-bold text-slate-700">Retirada Segura</h5>
+                        <p class="text-[9px] text-slate-400 leading-none mt-0.5">Reserve online, pague e retire na loja física.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subfooter -->
+            <div class="border-t border-slate-100 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+                <p>&copy; 2026 Aquarela Queiroz. Todos os direitos reservados.</p>
+                <div class="flex gap-4">
+                    <button onclick="openPolicyModal('retirada')" class="hover:underline bg-transparent border-none p-0 cursor-pointer">Políticas de Retirada</button>
+                    <button onclick="openPolicyModal('termos')" class="hover:underline bg-transparent border-none p-0 cursor-pointer">Termos de Uso</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Support Button (FAB) -->
+    <a href="https://wa.me/5514998680165?text=Ol%C3%A1!%20Gostaria%20de%20tirar%20uma%20d%C3%BAvida%20sobre%20as%20pe%C3%A7as%20da%20Aquarela%20Queiroz." 
+       target="_blank" 
+       class="fixed bottom-6 right-6 z-40 w-14 h-14 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full flex items-center justify-center text-2xl fab-btn pulse-whatsapp hover:scale-110 transition-transform duration-300" 
+       title="Fale conosco no WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Product Quick Shop Modal (Bottom Sheet on Mobile) -->
+    <div id="product-modal" class="fixed inset-0 bg-brandDark/60 backdrop-blur-sm z-50 hidden flex items-end sm:items-center justify-center p-0 sm:p-4 transition-opacity duration-300">
+        <div class="bg-cream w-full sm:max-w-md rounded-t-[2.5rem] sm:rounded-[2rem] shadow-2xl relative border-t sm:border border-slate-100 overflow-hidden max-h-[92vh] sm:max-h-none flex flex-col transform translate-y-full sm:translate-y-0 transition-transform duration-300 ease-out bg-white">
+            <!-- Drag handle bar on mobile -->
+            <div class="w-12 h-1 bg-slate-200 rounded-full mx-auto my-3 sm:hidden shrink-0"></div>
+            
+            <!-- Close Button -->
+            <button id="product-modal-close" class="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-black/40 text-white flex items-center justify-center hover:bg-black/60 transition shadow" aria-label="Fechar">
+                <i class="fas fa-times text-sm"></i>
+            </button>
+            
+            <!-- Modal Body (scrollable content) -->
+            <div class="overflow-y-auto flex-grow">
+                <!-- Large Image Header -->
+                <div class="w-full aspect-[4/5] sm:aspect-square bg-slate-100 relative shrink-0">
+                    <img id="product-modal-image" src="" alt="Produto" class="w-full h-full object-cover">
+                    <span id="product-modal-promo-badge" class="absolute top-4 left-4 px-3 py-1 rounded bg-rose-600 text-[10px] font-bold text-white uppercase shadow-md hidden z-10">Promoção</span>
+                </div>
+                
+                <!-- Details Container -->
+                <div class="p-6 space-y-6">
+                    <!-- Title and Price info -->
+                    <div class="space-y-2">
+                        <h3 id="product-modal-title" class="text-lg sm:text-xl font-bold text-slate-800 leading-snug font-serif"></h3>
+                        <div class="flex items-baseline gap-2">
+                            <span id="product-modal-old-price" class="text-xs text-slate-400 line-through hidden"></span>
+                            <span id="product-modal-price" class="text-base font-bold text-rose-700"></span>
+                        </div>
+                    </div>
+                    
+                    <!-- Description -->
+                    <div class="space-y-1.5">
+                        <h4 class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Descrição do Look</h4>
+                        <p id="product-modal-description" class="text-slate-600 text-xs leading-relaxed whitespace-pre-line pr-1"></p>
+                    </div>
+                    
+                    <div class="space-y-4 pt-4 border-t border-slate-100">
+                        <!-- Size Selection -->
+                        <div>
+                            <span class="block text-[10px] font-semibold text-slate-400 uppercase tracking-wider mb-2">Tamanho</span>
+                            <div id="product-modal-sizes" class="flex gap-2 flex-wrap">
+                                <!-- Populated dynamically via JS -->
+                            </div>
+                        </div>
+                        
+                        <!-- Color Selection -->
+                        <div>
+                            <span class="block text-[10px] font-semibold text-slate-400 uppercase tracking-wider mb-2">Cor / Estampa</span>
+                            <div id="product-modal-colors" class="flex gap-2 flex-wrap">
+                                <!-- Populated dynamically via JS -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Modal Footer -->
+            <div class="p-6 border-t border-slate-100 bg-cream/30 flex gap-3 items-center shrink-0">
+                <!-- Share Button -->
+                <button id="product-modal-share" class="w-12 h-12 rounded-2xl bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center transition shrink-0" title="Compartilhar Look">
+                    <i class="fas fa-share-alt text-base"></i>
+                </button>
+                <!-- Add Button -->
+                <button id="product-modal-add-btn" class="flex-grow py-3.5 bg-slate-900 text-white rounded-2xl text-xs sm:text-sm font-bold tracking-wide hover:bg-rose-600 btn-glow-hover transition shadow-lg shadow-slate-900/10 flex items-center justify-center gap-2">
+                    <i class="fas fa-shopping-bag"></i> Adicionar ao pedido
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Policies Modal -->
+    <div id="policy-modal" class="fixed inset-0 bg-brandDark/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-cream rounded-3xl overflow-hidden w-full max-w-lg shadow-2xl relative border border-slate-100 p-6 space-y-4 bg-white">
+            <!-- Close Button -->
+            <button id="policy-modal-close" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 flex items-center justify-center transition" aria-label="Fechar">
+                <i class="fas fa-times"></i>
+            </button>
+            <h3 id="policy-modal-title" class="text-xl font-bold text-slate-800 font-serif"></h3>
+            <div id="policy-modal-content" class="text-slate-600 text-xs leading-relaxed overflow-y-auto max-h-[300px] space-y-3 text-left">
+                <!-- Populated dynamically via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Video Player Modal -->
+    <div id="video-modal" class="fixed inset-0 bg-brandDark/85 backdrop-blur-md z-50 hidden flex items-center justify-center p-2 sm:p-4">
+        <div class="bg-cream rounded-2xl sm:rounded-[2rem] overflow-hidden w-full max-w-4xl max-h-[95vh] flex flex-col md:flex-row shadow-2xl relative border border-white/20">
+            <!-- Close Button -->
+            <button id="video-modal-close" class="absolute top-3 right-3 sm:top-4 sm:right-4 z-10 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-black/45 text-white flex items-center justify-center hover:bg-black/60 transition" aria-label="Fechar vídeo">
+                <i class="fas fa-times text-sm sm:text-base"></i>
+            </button>
+            
+            <!-- Video Player Column -->
+            <div class="w-full md:w-1/2 bg-black flex items-center justify-center h-[260px] sm:h-[350px] md:h-[600px] relative shrink-0">
+                <video id="modal-video-player" class="w-full h-full object-contain" controls autoplay loop playsinline>
+                    <source id="modal-video-source" src="" type="video/mp4">
+                    Seu navegador não suporta a tag de vídeo.
+                </video>
+                <!-- Expired Video Overlay Warning -->
+                <div id="video-error-overlay" class="absolute inset-0 bg-slate-900/90 flex flex-col items-center justify-center text-center p-4 hidden">
+                    <i class="fas fa-video-slash text-3xl text-rose-500 mb-2 animate-bounce"></i>
+                    <p class="text-white text-xs font-bold mb-1">O player de vídeo expirou</p>
+                    <p class="text-slate-400 text-[10px] leading-relaxed max-w-[220px] mb-3">O link temporário do Instagram expirou para reprodução interna direta.</p>
+                    <a id="video-error-external-link" href="#" target="_blank" class="px-3 py-1.5 bg-rose-600 hover:bg-rose-700 text-white rounded-full text-[10px] font-semibold tracking-wide transition flex items-center gap-1">
+                        Ver no Instagram <i class="fas fa-external-link-alt text-[9px]"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Details Column -->
+            <div class="w-full md:w-1/2 p-5 sm:p-8 flex flex-col justify-between flex-grow md:h-[600px] bg-white overflow-y-auto">
+                <div class="space-y-4 pr-1">
+                    <!-- Brand info -->
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden border border-rose-100 flex items-center justify-center">
+                            <img src="data/media/logo.jpg" alt="Logo" class="w-full h-full object-cover" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png';">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800 text-xs sm:text-sm">aquarelaqueiroz</h4>
+                            <p class="text-[9px] text-slate-400">Reels do Instagram</p>
+                        </div>
+                    </div>
+                    
+                    <div class="border-t border-slate-100 pt-3">
+                        <h3 class="text-lg font-bold text-slate-800 font-serif leading-snug mb-2 hidden md:block">Looks do Provador</h3>
+                        <p id="video-modal-caption" class="text-slate-600 text-[11px] sm:text-xs leading-relaxed whitespace-pre-line max-h-[120px] md:max-h-[300px] overflow-y-auto pr-1"></p>
+                    </div>
+                </div>
+                
+                <div class="pt-4 border-t border-slate-100 space-y-3 mt-4 shrink-0">
+                    <div class="flex justify-between items-center text-[10px] text-slate-400">
+                        <span>Gostou de alguma peça do vídeo?</span>
+                        <a id="video-modal-instagram-link" href="#" target="_blank" class="text-rose-600 hover:underline flex items-center gap-1 font-medium">
+                            Ver no Instagram <i class="fas fa-external-link-alt text-[9px]"></i>
+                        </a>
+                    </div>
+                    <a id="video-modal-whatsapp-btn" href="#" target="_blank" class="w-full py-3 sm:py-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl sm:rounded-2xl text-xs sm:text-sm font-bold tracking-wide transition shadow-lg shadow-emerald-600/10 flex items-center justify-center gap-2">
+                        <i class="fab fa-whatsapp text-base"></i> Quero peças deste vídeo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Application Script -->
+    <script src="app.js"></script>
+</body>
+</html>
