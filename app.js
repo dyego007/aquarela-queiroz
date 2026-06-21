@@ -331,7 +331,7 @@ function scrollToCatalog() {
 }
 
 // State: Add to Cart logic
-function addToCart(id, title, image, price, size, color) {
+function addToCart(id, title, image, price, size, color, instagramUrl) {
     // Check if item with same configuration exists
     const existingIndex = cart.findIndex(item => item.id === id && item.size === size && item.color === color);
 
@@ -345,7 +345,8 @@ function addToCart(id, title, image, price, size, color) {
             price,
             size,
             color,
-            quantity: 1
+            quantity: 1,
+            instagram_url: instagramUrl
         });
     }
 
@@ -495,10 +496,16 @@ function checkout() {
     cart.forEach(item => {
         const itemTotal = item.price * item.quantity;
         subtotal += itemTotal;
+        
+        // Formata o link da foto para ser completo na web (usando o domínio do Netlify)
+        const cleanImage = item.image.split('?')[0];
+        const fullImageUrl = cleanImage.startsWith('http') ? cleanImage : (window.location.origin + '/' + cleanImage);
+
         messageText += `• *${item.quantity}x ${item.title}*\n`;
         messageText += `  - Tam: ${item.size} | Cor: ${item.color}\n`;
         messageText += `  - Valor: R$ ${item.price.toFixed(2).replace('.', ',')} (Total: R$ ${itemTotal.toFixed(2).replace('.', ',')})\n`;
-        messageText += `  - Ref: ${item.image.split('?')[0]}\n\n`; // clean URL reference
+        messageText += `  - Link do Post: ${item.instagram_url || 'Não disponível'}\n`;
+        messageText += `  - Link da Foto: ${fullImageUrl}\n\n`;
     });
     
     messageText += `------------------------------------\n`;
@@ -757,7 +764,7 @@ function handleAddFromModal() {
     const color = selectedColorInput.value;
     const title = getCleanTitle(activeModalProduct.caption);
     
-    addToCart(activeModalProduct.id, title, activeModalProduct.image_url, activeModalProduct.price, size, color);
+    addToCart(activeModalProduct.id, title, activeModalProduct.image_url, activeModalProduct.price, size, color, activeModalProduct.instagram_url);
     
     // Close modal after adding
     closeProductModal();
